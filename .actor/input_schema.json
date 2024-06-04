@@ -1,0 +1,33 @@
+{
+    "title": "CheerioCrawler Template",
+    "type": "object",
+    "schemaVersion": 1,
+    "description": "Create Personal Access Token in <a href=\"https://github.com/settings/tokens?type=beta\">your GitHub account</a> and give it Read and Write permission for Issues.\nChoose a repo as a source of correct labels and target repos to copy labels to",
+    "properties": {
+        "personalAccessToken": {
+            "title": "GitHub Personal Access Token",
+            "type": "string",
+            "description": "Create Personal Access Token in <a href=\"https://github.com/settings/tokens?type=beta\">your GitHub account</a> and give it Read and Write permission for Issues.",
+            "editor": "textfield",
+            "isSecret": true
+        },
+        "sourceIssueUrl": {
+            "title": "Source issue URL",
+            "type": "string",
+            "description": "Link to the issue you want to copy",
+            "editor": "textfield"
+        },
+        "targetRepos": {
+            "title": "Target repositories",
+            "type": "array",
+            "description": "Repositories where you want to copy issue to",
+            "editor": "stringList"
+        },
+        "checkForDuplicates": {
+            "title": "Skip duplicate (by title)",
+            "type": "boolean",
+            "description": "Checks if current opened issue has the same title",
+            "default": true
+        }
+    }
+}
